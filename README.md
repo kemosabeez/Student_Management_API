@@ -1,4 +1,4 @@
-# Student Management API
+# Student Management API - Main Branch Version
 
 A Spring Boot practice project for learning REST APIs, DTOs, exception handling, and Git workflow.
 
