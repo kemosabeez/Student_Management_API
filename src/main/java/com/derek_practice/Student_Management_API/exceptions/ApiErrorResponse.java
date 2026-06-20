@@ -6,7 +6,6 @@ public class ApiErrorResponse {
     private int errorCode;
     private String errorMessage;
     private Map<String, Object> errorDetails;
-
     public ApiErrorResponse() {
     }
 
