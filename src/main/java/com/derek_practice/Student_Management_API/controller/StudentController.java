@@ -4,6 +4,7 @@ package com.derek_practice.Student_Management_API.controller;
 import com.derek_practice.Student_Management_API.dto.StudentRequest;
 import com.derek_practice.Student_Management_API.dto.StudentResponse;
 import com.derek_practice.Student_Management_API.service.StudentService;
+import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,19 +27,19 @@ public class StudentController {
     }
 
     @GetMapping("/{id}")
-    public StudentResponse getById(@PathVariable int id) {
+    public StudentResponse getById(@Valid @PathVariable int id) {
         return studentService.getById(id);
     }
 
     @PostMapping
-    public StudentResponse addStudent(@RequestBody StudentRequest request) {
+    public StudentResponse addStudent(@Valid @RequestBody StudentRequest request) {
         return studentService.addStudent(request);
     }
 
     @PutMapping("/{id}")
     public StudentResponse updateStudent(
-            @PathVariable int id,
-            @RequestBody StudentRequest request
+            @Valid @PathVariable int id,
+            @Valid @RequestBody StudentRequest request
     ) {
         return studentService.updateStudent(id, request);
     }
